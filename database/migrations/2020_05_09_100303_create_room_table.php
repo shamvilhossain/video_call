@@ -15,6 +15,7 @@ class CreateRoomTable extends Migration
     {
         Schema::create('conf_rooms', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('sid');
             $table->string('room_name');
             $table->string('type');
             $table->integer('max_participant');

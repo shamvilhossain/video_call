@@ -20,8 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Route::get('/', "VideoRoomsApiController@index");
 //Route::prefix('room')->middleware('auth')->group(function() {
 Route::prefix('room')->group(function() {
-    Route::get('join/{roomName}/{user_id}/{room_sid}', 'VideoRoomsApiController@joinRoom');
-    //Route::post('create', 'VideoRoomsApiController@createRoom');
-    Route::get('create', 'VideoRoomsApiController@createRoom');
-    Route::get('disconnect/{room_sid}', 'VideoRoomsApiController@disconnectRoom');
+    //Route::get('join/{roomName}/{user_identity}/{user_type}/{room_sid}', 'VideoRoomsApiController@joinRoom');
+    Route::post('join', 'VideoRoomsApiController@joinRoom');
+    Route::post('create', 'VideoRoomsApiController@createRoom');
+    Route::post('disconnect', 'VideoRoomsApiController@disconnectRoom');
+    //Route::get('create', 'VideoRoomsApiController@createRoom');
+    //Route::get('disconnect/{room_sid}', 'VideoRoomsApiController@disconnectRoom');
 });

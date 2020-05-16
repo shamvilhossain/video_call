@@ -18,7 +18,7 @@
 Route::get('/', "VideoRoomsController@index");
 //Route::prefix('room')->middleware('auth')->group(function() {
 Route::prefix('room')->group(function() {
-    Route::get('join/{roomName}/{user_id}/{room_sid}', 'VideoRoomsController@joinRoom');
+    Route::get('join/{roomName}/{user_identity}/{room_sid}', 'VideoRoomsController@joinRoom');
     Route::post('create', 'VideoRoomsController@createRoom');
     Route::get('disconnect/{room_sid}', 'VideoRoomsController@disconnectRoom');
 });

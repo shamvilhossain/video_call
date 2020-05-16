@@ -70,18 +70,18 @@
         }
          return redirect()->action('VideoRoomsController@joinRoom', [
              'roomName' => $request->roomName,
-             'user_id' => $request->user_id,
+             'user_identity' => $request->user_id,
              'room_sid' => $room_info->sid
          ]);
      }
 
-     public function joinRoom($roomName,$user_id,$room_sid)
+     public function joinRoom($roomName,$user_identity,$room_sid)
      {
         // A unique identifier for this user
         // $identity = Auth::user()->name;
         // $identity = uniqid();
         $identity = rand(3,1000);
-        $user_info=DB::table('users')->where('id',$user_id)->first();
+        $user_info=DB::table('users')->where('id',$user_identity)->first();
         $identity = $user_info->name;
 
          \Log::debug("joined with identity: $identity");
@@ -96,7 +96,7 @@
         
          // insert into room-participant tbl + individual join time
 			$room_member=array();
-	        $room_member['user_id']= $user_id;
+	        $room_member['user_identity']= $user_identity;
 	        $room_member['room_sid']= $room_sid;
 	        $room_member['join_time']= date("Y-m-d H:i:s");
 	        $room_member['status']= 1;

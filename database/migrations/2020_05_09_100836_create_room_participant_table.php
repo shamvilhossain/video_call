@@ -15,8 +15,9 @@ class CreateRoomParticipantTable extends Migration
     {
         Schema::create('conf_room_participants', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id');
-            $table->bigInteger('room_id');
+            $table->string('user_identity');
+            $table->string('user_type');
+            $table->string('room_sid');
             $table->dateTime('join_time', 0)->nullable();
             $table->dateTime('disconnect_time', 0)->nullable();
             $table->tinyInteger('status');

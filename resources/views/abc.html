@@ -96,8 +96,8 @@
         </script>
    
         <script>
-        var accessToken='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTS2UxODVkNjFmNGNjMjAyMWFlYjQ0NjhlY2FiMzRiZjEzLTE1ODk0Njk5NzUiLCJpc3MiOiJTS2UxODVkNjFmNGNjMjAyMWFlYjQ0NjhlY2FiMzRiZjEzIiwic3ViIjoiQUMxYTM1OTA4ZTc3MTViNWQzNDZiOTA2MGU0YjA3MjQ2NSIsImV4cCI6MTU4OTQ3MzU3NSwiZ3JhbnRzIjp7ImlkZW50aXR5IjoiVGFoc2luIEFicmFyIiwidmlkZW8iOnsicm9vbSI6ImlpaSJ9fX0.OxSDplQShr60XrX-ByY1YOuRFiGU6-Ycc7FkTUA6XoU';
-        var roomName='iii';
+        var accessToken='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTS2UxODVkNjFmNGNjMjAyMWFlYjQ0NjhlY2FiMzRiZjEzLTE1ODk2MTE2ODQiLCJpc3MiOiJTS2UxODVkNjFmNGNjMjAyMWFlYjQ0NjhlY2FiMzRiZjEzIiwic3ViIjoiQUMxYTM1OTA4ZTc3MTViNWQzNDZiOTA2MGU0YjA3MjQ2NSIsImV4cCI6MTU4OTYxNTI4NCwiZ3JhbnRzIjp7ImlkZW50aXR5IjoibXNkIiwidmlkZW8iOnsicm9vbSI6ImFwaW9uZSJ9fX0.c_koCHFoEVFwu_dkz6QRQ_ZoiuIrswSiPdtTXDOB1ZM';
+        var roomName='apione';
             Twilio.Video.createLocalTracks({
                 audio: true,
                 video: { width: 300 }
@@ -181,19 +181,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+           
             
             <div class="content">
                 <div class="title m-b-md">
