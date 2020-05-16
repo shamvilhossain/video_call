@@ -16,9 +16,10 @@
 // });
 //Auth::routes();
 Route::get('/', "VideoRoomsController@index");
+Route::get('/test', "VideoRoomsController@joinRoomTest");
 //Route::prefix('room')->middleware('auth')->group(function() {
 Route::prefix('room')->group(function() {
-    Route::get('join/{roomName}/{user_identity}/{room_sid}', 'VideoRoomsController@joinRoom');
+    Route::get('join/{roomName}/{user_identity}/{user_type}', 'VideoRoomsController@joinRoom');
     Route::post('create', 'VideoRoomsController@createRoom');
     Route::get('disconnect/{room_sid}', 'VideoRoomsController@disconnectRoom');
 });
